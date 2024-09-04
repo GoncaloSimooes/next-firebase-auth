@@ -4,14 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 import{ getAuth } from "firebase/auth"
 
-// Your web app's Firebase configuration
+// Web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCyWJOoNHvzf9Fv-kaOy_ghzcAvg2eRejo",
-  authDomain: "nextjs-auth-project-b3e09.firebaseapp.com",
-  projectId: "nextjs-auth-project-b3e09",
-  storageBucket: "nextjs-auth-project-b3e09.appspot.com",
-  messagingSenderId: "352100877597",
-  appId: "1:352100877597:web:3e10afae32cec3ccc8cdf4"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
