@@ -7,11 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-     "release": "standard-version"
+    "release": "standard-version"
   },
   "dependencies": {
     "firebase": "^10.13.1",
     "next": "14.2.7",
+    "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18"
   },
