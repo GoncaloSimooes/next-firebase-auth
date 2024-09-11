@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { UserAuth } from '../context/AuthContext';
 
+
+
 const Navbar =  () => {
     const {user, googleSignIn, logOut} = UserAuth();
     const [loading, setLoanding]  = useState(true);
@@ -12,6 +14,7 @@ const Navbar =  () => {
           } catch(error){
             console.log(error);
           }
+          setLoanding(false)
     };
 
     const handleSignOut = async () =>{
@@ -37,12 +40,12 @@ const Navbar =  () => {
                 <Link href='/'>Home</Link> 
             </li>
             <li className='p-2 cursor-pointer'>
-                <Link href='/about'>About</Link> 
+                <Link href='/pages/about'>About</Link> 
             </li>
 
             {!user ? null : (
                 <li className='p-2 cursor-pointer'>
-                <Link href='/profile'>Profile</Link> 
+                <Link href='/pages/profile'>Profile</Link> 
             </li>
             )}
         </ul>
