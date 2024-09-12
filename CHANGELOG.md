@@ -4,6 +4,9 @@
 - Next.js aplication.
 - Firebase configuration.
 - Next-Auth autentication. 
+- MongoDB configuration
+
+
 
 
 
