@@ -1,23 +1,24 @@
-'use client'
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Navbar from "./components/Navbar";
-import { AuthContextProvider } from "./context/AuthContext";
+'use client';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import Navbar from './components/Navbar';
+import { UserAuth } from './context/AuthContext';
+import { Provider } from './provider';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthContextProvider>
+        <Provider>
           <Navbar />
           {children}
-        </AuthContextProvider>
+        </Provider>
       </body>
     </html>
   );
