@@ -5,10 +5,9 @@ import { UserAuth } from "./context/AuthContext";
 export default function Home() {
   const { data: session, status } = useSession();
   const {user} = UserAuth()
-  
-  
 
   console.log('Estou na Pagina Home', user, status)
+
   const showPageContent = () => {
 // checking if sessions exists
 if (session) {
@@ -21,6 +20,14 @@ if (session) {
       </>
   )
 }
+
+// rendering components for not logged in users
+return (
+      <>
+      <p>Not Signed In</p>
+      <button onClick={() => signIn('google')}>Sign in with google</button>
+      </>
+)
   }
 
   return (
