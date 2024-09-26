@@ -1,29 +1,21 @@
-'use client'
-import { Inter } from 'next/font/google';
-import './globals.css';
-import Navbar from './components/Navbar';
-import { AuthContextProvider } from './context/AuthContext';
-import { Provider } from './provider';
+"use client";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Navbar from "./components/Navbar";
+import { AuthContextProvider } from "./context/AuthContext";
 
+const inter = Inter({ subsets: ["latin"] });
 
-const inter = Inter({ subsets: ['latin'] });
-
-const RootLayout = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) =>   (
-    <html lang="en">
-      <body className={inter.className}>
-          <Provider>
-            <AuthContextProvider>
-              <Navbar/>
-              {children}
-            </AuthContextProvider>
-          </Provider>
-      </body>
-    </html>
+export default function RootLayout ({ children }: { children: React.ReactNode }) {
+  return (
+  <html lang="en">
+    <body className={inter.className}>
+      <AuthContextProvider>
+        <Navbar />
+        {children}
+      </AuthContextProvider>
+    </body>
+  </html>
   );
+}
 
-
-export default RootLayout

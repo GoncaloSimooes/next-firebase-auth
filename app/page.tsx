@@ -1,39 +1,9 @@
-"use client";
-import { signOut, signIn, useSession } from "next-auth/react";
-import { UserAuth } from "./context/AuthContext";
+import Image from "next/image";
 
 export default function Home() {
-  const { data: session, status } = useSession();
-  const {user} = UserAuth()
-
-  console.log('Estou na Pagina Home', user, status)
-
-  const showPageContent = () => {
-// checking if sessions exists
-if (session) {
-  // rendering components for logged in users
   return (
-      <>
-      <p>Welcome {session.user?.name}. Signed In As</p>
-      <p>{session.user?.email}</p>
-      <button onClick={() => signOut()}>Sign out</button>
-      </>
-  )
-}
-
-// rendering components for not logged in users
-return (
-      <>
-      <p>Not Signed In</p>
-      <button onClick={() => signIn('google')}>Sign in with google</button>
-      </>
-)
-  }
-
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      <h1 className="text-xl">Home</h1>
-     {showPageContent()} 
+    <main className="p-4">
+      <h1>Home Page</h1>
     </main>
   );
 }
